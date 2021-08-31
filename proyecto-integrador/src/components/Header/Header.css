@@ -1,0 +1,35 @@
+header{
+    height: 10vh;
+    background-color: darkgrey;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+h1{
+    flex: 1;
+    margin: 6px 0px 0px 0px;
+}
+
+section{
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row; 
+    justify-content: flex-end; 
+}
+
+form{
+    flex: 0.5;
+    padding-right: 5%;
+}
+
+header p{
+    margin: 6px 0px 0px 0px;
+    padding-left: 10%;
+}
+
+i{
+    flex: 0.2;
+    margin: 6px 0px 0px 0px;
+}
