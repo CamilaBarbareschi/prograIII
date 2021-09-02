@@ -7,16 +7,12 @@ const Body =()=> {
       return (
     <React.Fragment>
         <main >
-          <button type="button">Cargar más tarjetas</button>
+          <section className="topbar">
+            <h2>Peliculas</h2>
+            <button type="button">Cargar más tarjetas</button>
+          </section>
           <section className="card-container">
-            <article className='flexbox'>
-              <section className="navigation">
-                <div>
-                  <i className="fas fa-chevron-left" />
-                  <i className="fas fa-chevron-right" />
-                </div>
-                <i className="far fa-window-close" />
-              </section>
+            <article className='contenedor-tarjetas'>
              <Tarjetas />
              <Tarjetas />
              <Tarjetas />

@@ -1,4 +1,4 @@
-article.flexbox{
+article.contenedor-tarjetas{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -10,8 +10,11 @@ article.flexbox{
     width: 100%;
 }
 
-.navigation{
-    width: 100%;
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
 }
-
 

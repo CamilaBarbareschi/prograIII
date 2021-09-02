@@ -1,38 +1,27 @@
 header{
     height: 10vh;
+    width: 100%;
     background-color: darkgrey;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
+    justify-content: flex-end;
 }
 
-h1{
-    flex: 1;
-    margin: 6px 0px 0px 0px;
+header h1{ 
+    margin: auto auto auto 10px;
+    width: 35%;
 }
 
-section{
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row; 
-    justify-content: flex-end; 
-    flex: 1 1 auto;
-}
-
-form{
-    flex: 0.5;
-    padding-right: 5%;
-    flex: 1 1 auto;
+header form{
+    margin: auto;
 }
 
 header p{
-    margin: 6px 0px 0px 0px;
-    padding-left: 10%;
-    flex: 1 1 auto;
+    margin: auto;
 }
 
-i{
-    flex: 0.2;
-    margin: 6px 0px 0px 0px;
-    flex: 1 1 auto;
+header i{
+    margin: auto;
 }
+
