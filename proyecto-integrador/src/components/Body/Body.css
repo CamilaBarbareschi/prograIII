@@ -1,0 +1,17 @@
+article.flexbox{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.card-container{
+    width: 100%;
+}
+
+.navigation{
+    width: 100%;
+}
+
+

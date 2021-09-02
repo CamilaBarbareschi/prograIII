@@ -12,24 +12,27 @@ h1{
 }
 
 section{
-    flex: 2;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row; 
     justify-content: flex-end; 
+    flex: 1 1 auto;
 }
 
 form{
     flex: 0.5;
     padding-right: 5%;
+    flex: 1 1 auto;
 }
 
 header p{
     margin: 6px 0px 0px 0px;
     padding-left: 10%;
+    flex: 1 1 auto;
 }
 
 i{
     flex: 0.2;
     margin: 6px 0px 0px 0px;
+    flex: 1 1 auto;
 }
