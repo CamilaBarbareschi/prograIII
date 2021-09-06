@@ -1,6 +1,6 @@
 import React from 'react';
 import './Body.css'
-import Tarjetas from './Tarjetas/Tarjetas'
+import Peliculas from '../Peliculas/Peliculas';
 
 
 const Body =()=> {
@@ -13,9 +13,7 @@ const Body =()=> {
           </section>
           <section className="card-container">
             <article className='contenedor-tarjetas'>
-             <Tarjetas />
-             <Tarjetas />
-             <Tarjetas />
+             <Peliculas/>
             </article>
           </section>
         </main>
