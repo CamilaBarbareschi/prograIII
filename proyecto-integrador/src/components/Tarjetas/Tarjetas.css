@@ -19,3 +19,10 @@ main.tarjeta img{
     justify-content: space-between; 
     margin: 5px 0px 5px 0px ;
 }
+.aditional-info{
+    display: none;
+}
+
+.aditional-info-show{
+    display: block;
+}
