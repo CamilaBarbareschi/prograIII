@@ -1,5 +1,5 @@
 main.tarjeta{
-    width: 24%;
+    width: 20%;
     padding: 10px;
     margin-bottom: 20px;
     background: #fff;
@@ -25,4 +25,8 @@ main.tarjeta img{
 
 .aditional-info-show{
     display: block;
+}
+
+.VerMas:hover{
+    color: rgb(10, 15, 255);
 }

@@ -35,13 +35,13 @@ render(){
           </section>
           <img src= {`https://image.tmdb.org/t/p/w500/${this.props.img}`} alt="" />
           <h3>{this.props.title} </h3>
-          <p className="description">{this.props.descrip} </p>
+          <p> <strong>Fecha de estreno:</strong> {this.props.estreno}</p>
           <section className={`${this.state.verMas ? 'aditional-info-show': 'aditional-info'}`}>
-            <p>Fecha de estreno: {this.props.estreno}</p>
-            <p>Popularidad: {this.props.popularidad} </p>
-            <p>Lenguaje original: {this.props.idioma}</p>
+            <p> <strong>Popularidad:</strong> {this.props.popularidad} </p>
+            <p><strong>Lenguaje original:</strong> {this.props.idioma}</p>
+            <p className="description"> <strong>Sinopsis:</strong> {this.props.descrip} </p>
           </section>
-            <a href onClick={()=>this.verMas()}>{this.state.texto}</a>
+            <a href onClick={()=>this.verMas()} className='VerMas'>{this.state.texto}</a>
         </main>
     )
 }
