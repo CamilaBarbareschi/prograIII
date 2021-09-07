@@ -9,12 +9,9 @@ const Body =()=> {
         <main >
           <section className="topbar">
             <h2>Peliculas</h2>
-            <button type="button">Cargar más tarjetas</button>
           </section>
           <section className="card-container">
-            <article className='contenedor-tarjetas'>
-             <Peliculas/>
-            </article>
+          <Peliculas/>
           </section>
         </main>
         </React.Fragment>

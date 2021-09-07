@@ -31,7 +31,7 @@ render(){
                 <i className="fas fa-chevron-left" />
                 <i className="fas fa-chevron-right" />
               </div>
-              <i className="far fa-window-close" />
+              <i className="far fa-window-close" onClick={()=> this.props.borrar(this.props.id)} />
           </section>
           <img src= {`https://image.tmdb.org/t/p/w500/${this.props.img}`} alt="" />
           <h3>{this.props.title} </h3>
