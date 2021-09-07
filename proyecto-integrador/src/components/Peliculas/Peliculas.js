@@ -28,7 +28,7 @@ render(){
     return(
         <>
         {this.state.peliculas.map((peliculas) => (
-            <Tarjetas key={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview} estreno={peliculas.release_date} popularidad={peliculas.popularity} />
+            <Tarjetas key={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview} estreno={peliculas.release_date} popularidad={peliculas.popularity} idioma={peliculas.original_language} />
         ))}
         </>
     )
