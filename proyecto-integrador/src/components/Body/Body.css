@@ -1,9 +1,15 @@
+.card-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
 article.contenedor-tarjetas{
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     align-items: flex-start;
-    justify-content: space-between; 
+    justify-content: space-around; 
 }
 
 .card-container{
@@ -18,3 +24,6 @@ article.contenedor-tarjetas{
     justify-content: space-between; 
 }
 
+.cargarMas{
+    width: 10%;
+}

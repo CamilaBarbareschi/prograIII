@@ -2,14 +2,15 @@ main.tarjeta{
     width: 20%;
     padding: 10px;
     margin-bottom: 20px;
-    background: #fff;
+    background:#191919;
     border-radius: 5px;
-    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    box-shadow: 0.15rem 1.75rem 0 #121212;
 }
 
 main.tarjeta img{
     width: 100%;
     margin-bottom: 20px; 
+    margin-top: 10px; 
 }
 
 .navigation{
@@ -28,5 +29,17 @@ main.tarjeta img{
 }
 
 .VerMas:hover{
-    color: rgb(10, 15, 255);
+    color: #6670fc;
+}
+
+p, h3, i, a, h2, h1 {
+    color: #ffffff;
+}
+
+i.fas.fa-chevron-right{
+  margin-left: 4px;  
+}
+
+i:hover{
+    color: #6670fc;
 }
