@@ -9,7 +9,8 @@ constructor(props){
     this.state = {
         peliculas: [],
         cargando: false,
-        urlOriginal: 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1', 
+        paginacion: 2,
+        urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1`, 
     }
 }   
 
@@ -33,11 +34,12 @@ borrarTarjeta(id){
 }
 
 agregar(){
-    fetch(this.state.urlOriginal)
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=${this.state.paginacion}`)
         .then((respuesta) => respuesta.json())
         .then((data) => {
             this.setState({
-                peliculas: this.state.peliculas.concat(data.results)
+                peliculas: this.state.peliculas.concat(data.results),
+                paginacion: this.state.paginacion + 1
             })
         })
         .catch(err => console.log(err));

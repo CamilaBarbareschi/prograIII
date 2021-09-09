@@ -14,23 +14,24 @@ class App extends Component {
       flechaUp: "",
     }
   }
-  
-cambiarOrientacion(orientacion){
- 
-  this.setState({
-    orientacion: orientacion, 
-    flechaUp: "fas fa-chevron-up", 
-    flechaDown: "fas fa-chevron-down", 
-  })
+    
+  cambiarOrientacion(orientacion){
+    this.setState({
+      orientacion: orientacion, 
+      flechaUp: "fas fa-chevron-up", 
+      flechaDown: "fas fa-chevron-down", 
+    })
+  }
+
+  render(){
+      return (
+        <div id="wrapper">
+          <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)}/>
+          <Peliculas orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} />
+          <Footer/>
+        </div>
+      );
+  }
 }
-render(){
-    return (
-      <div id="wrapper">
-        <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)}/>
-        <Peliculas orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} />
-        <Footer/>
-      </div>
-    );
- }}
   
-  export default App;
+export default App;
