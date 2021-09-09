@@ -31,8 +31,8 @@ render(){
 
       <section className="navigation">
         <div>
-          <i className={`${this.props.flechaUp ? 'fas fa-chevron-up' : 'fas fa-chevron-left'}`}/>
-          <i className={`${this.props.flechaDown ? 'fas fa-chevron-down' : 'fas fa-chevron-right'}`}/>
+          <i className={`${this.props.flechaUp}`}/>
+          <i className={`${this.props.flechaDown}`}/>
           
         </div>
         <i className="far fa-window-close" onClick={()=> this.props.borrar(this.props.id)} />

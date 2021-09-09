@@ -10,17 +10,18 @@ class App extends Component {
     super(props);
     this.state={
       orientacion: "card-container-row", 
-      flechaDown: "", 
-      flechaUp: "",
+      flechaDown: "fas fa-chevron-right", 
+      flechaUp: "fas fa-chevron-left",
     }
   }
     
   cambiarOrientacion(orientacion){
     this.setState({
       orientacion: orientacion, 
-      flechaUp: "fas fa-chevron-up", 
-      flechaDown: "fas fa-chevron-down", 
+      flechaUp: (this.state.flechaUp === "fas fa-chevron-left") ? ("fas fa-chevron-up") : ("fas fa-chevron-left"),
+      flechaDown: (this.state.flechaDown === "fas fa-chevron-right") ? ("fas fa-chevron-down") : ("fas fa-chevron-right")
     })
+    console.log(this.state)
   }
 
   render(){

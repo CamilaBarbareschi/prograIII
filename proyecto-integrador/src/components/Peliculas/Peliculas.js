@@ -61,7 +61,7 @@ render(){
                 <article className={this.props.orientacion}>
             
             {   this.state.peliculas.map((peliculas) => (
-                    <Tarjetas key={peliculas.id} id={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview} flechaUp={this.props.flechaUp} flechaDown={this.props.flechaDown}
+                    <Tarjetas key={peliculas.id} id={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview}  flechaUp={this.props.flechaUp} flechaDown={this.props.flechaDown}
                     estreno={peliculas.release_date} popularidad={peliculas.popularity} idioma={peliculas.original_language} borrar={(peliculaBorrada)=>this.borrarTarjeta(peliculaBorrada)}/>
                 ))
             }
