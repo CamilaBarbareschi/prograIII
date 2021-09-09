@@ -3,16 +3,14 @@ import './Body.css'
 import Peliculas from '../Peliculas/Peliculas';
 
 
-const Body =(props)=> {
- console.log(props)
+const Body =()=> {
       return (
-       
     <React.Fragment>
         <main >
           <section className="topbar">
             <h2>Peliculas</h2>
           </section>
-          <section className={props.orientacion}>
+          <section className="card-container">
           <Peliculas/>
           </section>
         </main>
