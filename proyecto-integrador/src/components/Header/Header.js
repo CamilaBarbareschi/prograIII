@@ -2,13 +2,15 @@ import React from 'react';
 import './Header.css'
 
 
-const Header =()=> {
+const Header =(props)=> {
+  
+
       return (
         <header>
           <h1>Titulo</h1>
           <p>ASC/ DESC</p>
-          <i className="fas fa-th" />
-          <i className="fas fa-align-justify" />
+          <i className="fas fa-th" onClick={()=>props.cambiarOrientacion("card-container-column")}/>
+          <i className="fas fa-align-justify" onClick={()=>props.cambiarOrientacion("card-container-row")} />
           <form action>
             <input type="text" name="search" id placeholder="Search" />
             <button type="submit"><i className="fas fa-search" /></button>

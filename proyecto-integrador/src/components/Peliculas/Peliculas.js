@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import Tarjetas from '../Tarjetas/Tarjetas';
+import './Peliculas.css'
 
 class Peliculas extends Component{
 
-constructor(){
-    super()
+constructor(props){
+    super(props)
+    console.log(props)
     this.state = {
         peliculas: [],
         cargando: false,
@@ -12,13 +14,8 @@ constructor(){
 }   
 
 componentDidMount(){
-<<<<<<< HEAD
     const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
     console.log(url)
-=======
-    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=2'
-
->>>>>>> 71f9f52d1d918d1418096329d774ecc36d3344b9
     fetch(url)
         .then((respuesta) => respuesta.json())
         .then((data) => {
@@ -55,13 +52,18 @@ agregar(){
 render(){
     return(
         <React.Fragment>
-         {this.state.cargando === false ? (<iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>) : ( <article className='contenedor-tarjetas'>
+            <section className="topbar">
+            <h2>Peliculas</h2>
+          </section>
+          <section className="card-container-row">
+         {this.state.cargando === false ? (<iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>) : ( <article className={this.props.orientacion}>
          {this.state.peliculas.map((peliculas) => (
             <Tarjetas key={peliculas.id} id={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview} estreno={peliculas.release_date} popularidad={peliculas.popularity} idioma={peliculas.original_language} borrar={(peliculaBorrada)=>this.borrarTarjeta(peliculaBorrada)}/>
         ))}
         </article>
         )} 
         <button className="cargarMas" type="button" onClick={()=>this.agregar()}>Cargar más tarjetas</button>
+        </section>
         </React.Fragment>
     )
 }
