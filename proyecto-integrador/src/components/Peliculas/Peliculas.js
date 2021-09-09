@@ -12,7 +12,7 @@ constructor(){
 }   
 
 componentDidMount(){
-    const url = 'https://pi.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
+    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
     console.log(url)
     fetch(url)
         .then((respuesta) => respuesta.json())
