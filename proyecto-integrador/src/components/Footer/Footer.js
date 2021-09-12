@@ -5,7 +5,7 @@ const Footer =()=>{
     return(
         <footer>
             <ul className="team">
-                <li>Martina Bellsola</li>
+                <li> © Martina Bellsola</li>
                 <li>Camila Barbareschi</li>
                 <li>Carlos Escobar</li>
             </ul>

@@ -49,7 +49,7 @@ render(){
     return(
         <React.Fragment>
             <section className="topbar">
-                <h2>Peliculas</h2>
+                <h2>Peliculas populares</h2>
             </section>
           
             <section className="card-container">

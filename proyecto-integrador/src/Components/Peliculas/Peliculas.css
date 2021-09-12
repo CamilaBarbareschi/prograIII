@@ -37,5 +37,19 @@
 }
 
 .cargarMas{
-    width: 10%;
+    border: 0;
+    margin-left: 85%;
+    cursor: pointer;
+    padding: .5rem 2rem;
+    background-color: rgba(53, 53, 53, 0.486);
+    color: white;
+    line-height: 1rem;
+    width: auto;
+    margin-top: 1%;
+    border-radius: 3rem;
+}
+
+.cargarMas:hover{
+    background-color: rgba(53, 53, 53, 0.137);
+    color: #6670fc;
 }
