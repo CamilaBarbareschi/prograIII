@@ -12,13 +12,8 @@ constructor(){
 }   
 
 componentDidMount(){
-<<<<<<< HEAD
     const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
     console.log(url)
-=======
-    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=2'
-
->>>>>>> 71f9f52d1d918d1418096329d774ecc36d3344b9
     fetch(url)
         .then((respuesta) => respuesta.json())
         .then((data) => {
