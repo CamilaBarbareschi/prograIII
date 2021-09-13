@@ -1,0 +1,55 @@
+.card-container-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around; 
+}
+.card-container-row{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-around; 
+}
+
+.card-container-column main.tarjeta{
+    width: 90%;
+}
+
+.card-container-column main.tarjeta section.info-img{
+    display: flex;
+    flex-direction: row;
+}
+
+.card-container-column main.tarjeta section.info-img img {
+    width: 20%;
+}
+
+.card-container-column main.tarjeta section.principal-info{
+    margin-left: 4%;
+}
+.topbar {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.cargarMas{
+    border: 0;
+    margin-left: 85%;
+    cursor: pointer;
+    padding: .5rem 2rem;
+    background-color: rgba(53, 53, 53, 0.486);
+    color: white;
+    line-height: 1rem;
+    width: auto;
+    margin-top: 1%;
+    border-radius: 3rem;
+}
+
+.cargarMas:hover{
+    background-color: rgba(53, 53, 53, 0.137);
+    color: #6670fc;
+}

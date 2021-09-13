@@ -2,15 +2,15 @@ main.tarjeta{
     width: 20%;
     padding: 10px;
     margin-bottom: 20px;
-    background:#191919;
+    background: rgba(53, 53, 53, 0.4);
     border-radius: 5px;
-    box-shadow: 0.15rem 1.75rem 0 #121212;
+    box-shadow: 0rem 0rem 6px 0px rgb(53 53 53 /40%);
 }
 
 main.tarjeta img{
     width: 100%;
-    margin-bottom: 20px; 
     margin-top: 10px; 
+    border-radius: 5px;
 }
 
 .navigation{
@@ -36,10 +36,24 @@ p, h3, i, a, h2, h1 {
     color: #ffffff;
 }
 
+h2{
+    font-size: 2.05rem;
+    line-height: 3.5rem;
+    vertical-align: top;
+    color: #fff;
+    margin-left: 2%;
+    letter-spacing: -1px;
+}
+
+
 i.fas.fa-chevron-right{
   margin-left: 4px;  
 }
 
 i:hover{
     color: #6670fc;
+}
+
+i.fas.fa-chevron-down{
+    margin-left: 6px;  
 }
