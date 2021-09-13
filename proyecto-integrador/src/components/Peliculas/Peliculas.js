@@ -7,7 +7,8 @@ class Peliculas extends Component{
 constructor(props){
     super(props)
     this.state = {
-        peliculas: this.props.peliculas
+        peliculas: this.props.peliculas,
+        cargando: this.props.cargando
     }
 }   
 
@@ -41,7 +42,7 @@ render(){
                 </article>
             )} 
             
-            <button className="cargarMas" type="button" onClick={()=>this.props.agregar()}>Cargar más tarjetas</button>
+          {/*   <button className="cargarMas" type="button" onClick={()=>this.props.agregar()}>Cargar más tarjetas</button> */}
             
             </section>
         </React.Fragment>

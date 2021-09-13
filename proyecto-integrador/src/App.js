@@ -12,7 +12,7 @@ class App extends Component {
       peliculas: [],
       cargando: false,
       paginacion: 2,
-      urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1`, 
+      urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=273b9407308bfcdeef52576c44acfda9&language=en-US&page=1`, 
       orientacion: "card-container-row", 
       flechaDown: "fas fa-chevron-right", 
       flechaUp: "fas fa-chevron-left",
@@ -21,22 +21,23 @@ class App extends Component {
   }
   
   componentDidMount(){
-    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
+    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=273b9407308bfcdeef52576c44acfda9&language=en-US&page=1'
     console.log(url)
     fetch(url)
       .then((respuesta) => respuesta.json())
       .then((data) => {
+        console.log(data.results)
         this.setState({
           peliculas: data.results,
           cargando: true
         })
       })
     .catch(err => console.log(err));
-    console.log(this.state.peliculas)
+    
   }
 
-  agregar(){
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=${this.state.paginacion}`)
+  /* agregar(){
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=273b9407308bfcdeef52576c44acfda9&language=en-US&page=${this.state.paginacion}`)
       .then((respuesta) => respuesta.json())
       .then((data) => {
         this.setState({
@@ -45,9 +46,9 @@ class App extends Component {
           })
       })
       .catch(err => console.log(err));
-  } 
+  }  */
 
-  filtrar(texto){
+/*   filtrar(texto){
     let filtrados =  this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
      ); 
      console.log(filtrados);
@@ -65,7 +66,7 @@ class App extends Component {
       flechaDown: (this.state.flechaDown === "fas fa-chevron-right") ? ("fas fa-chevron-down") : ("fas fa-chevron-right")
     })
 
-  } 
+  }  */
 
 /*   filtrarPeliculas(value){
     alert(value)
@@ -78,7 +79,7 @@ class App extends Component {
       return (
         <div id="wrapper">
           <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrarBusqueda={(value)=>this.filtrarPeliculas(value)}/>
-          <Peliculas agregar={this.agregar()} peliculas={this.state.peliculas} orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} filtro={()=> this.state.value}/>
+          <Peliculas /* agregar={this.agregar()} */ peliculas={this.state.peliculas} /* orientacion={this.state.orientacion} */ flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} filtro={()=> this.state.value} cargando={this.state.cargando}/>
           <Footer/>
         </div>
       );
