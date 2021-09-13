@@ -12,6 +12,7 @@ class App extends Component {
       orientacion: "card-container-row", 
       flechaDown: "fas fa-chevron-right", 
       flechaUp: "fas fa-chevron-left",
+      value: '',
     }
   }
     
@@ -24,11 +25,19 @@ class App extends Component {
     console.log(this.state)
   }
 
+  filtrarPeliculas(value){
+    alert(value)
+    this.setState({
+      value
+    })
+  }
+
   render(){
       return (
         <div id="wrapper">
-          <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)}/>
-          <Peliculas orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} />
+          <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrarBusqueda={(value)=>this.filtrarPeliculas(value)}/>
+          <Peliculas orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} filtro={()=> this.state.value}/>
+          {/* <Peliculas orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} value={this.state.value}/> */}
           <Footer/>
         </div>
       );

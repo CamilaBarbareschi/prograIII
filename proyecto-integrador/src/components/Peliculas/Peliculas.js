@@ -15,21 +15,17 @@ constructor(props){
 }   
 
 componentDidMount(){
-<<<<<<< HEAD
-    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
-    console.log(url)
-    fetch(url)
-=======
-    fetch(this.state.urlOriginal)
->>>>>>> 847aab87bedc36f19aa377daf26fb84d7fc8c250
-        .then((respuesta) => respuesta.json())
-        .then((data) => {
-            this.setState({
-                peliculas: data.results,
-                cargando: true
+        const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
+        console.log(url)
+        fetch(url)
+            .then((respuesta) => respuesta.json())
+            .then((data) => {
+                this.setState({
+                    peliculas: data.results,
+                    cargando: true
+                })
             })
-        })
-    .catch(err => console.log(err));
+        .catch(err => console.log(err));
 }
 
 borrarTarjeta(id){
@@ -49,6 +45,16 @@ agregar(){
             })
         })
         .catch(err => console.log(err));
+}
+
+filtrar(texto){
+   let filtrados =  this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
+    ); 
+    console.log(filtrados);
+    
+    this.setState({
+        peliculas: filtrados,
+    })
 }
 
 render(){
