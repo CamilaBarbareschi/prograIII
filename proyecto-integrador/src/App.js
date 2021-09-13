@@ -16,7 +16,7 @@ class App extends Component {
       orientacion: "card-container-row", 
       flechaDown: "fas fa-chevron-right", 
       flechaUp: "fas fa-chevron-left",
-      value: '',
+      value: ''
     }
   }
   
