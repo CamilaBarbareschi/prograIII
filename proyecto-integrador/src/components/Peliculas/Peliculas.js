@@ -7,53 +7,14 @@ class Peliculas extends Component{
 constructor(props){
     super(props)
     this.state = {
-        peliculas: [],
-        cargando: false,
-        paginacion: 2,
-        urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1`, 
+        peliculas: this.props.peliculas
     }
 }   
-
-componentDidMount(){
-        const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
-        console.log(url)
-        fetch(url)
-            .then((respuesta) => respuesta.json())
-            .then((data) => {
-                this.setState({
-                    peliculas: data.results,
-                    cargando: true
-                })
-            })
-        .catch(err => console.log(err));
-}
 
 borrarTarjeta(id){
     const resto = this.state.peliculas.filter((peliBorrada) => peliBorrada.id !== id)
     this.setState({
         peliculas: resto,
-    })
-}
-
-agregar(){
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=${this.state.paginacion}`)
-        .then((respuesta) => respuesta.json())
-        .then((data) => {
-            this.setState({
-                peliculas: this.state.peliculas.concat(data.results),
-                paginacion: this.state.paginacion + 1
-            })
-        })
-        .catch(err => console.log(err));
-}
-
-filtrar(texto){
-   let filtrados =  this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
-    ); 
-    console.log(filtrados);
-    
-    this.setState({
-        peliculas: filtrados,
     })
 }
 
@@ -80,7 +41,7 @@ render(){
                 </article>
             )} 
             
-            <button className="cargarMas" type="button" onClick={()=>this.agregar()}>Cargar más tarjetas</button>
+            <button className="cargarMas" type="button" onClick={()=>this.props.agregar()}>Cargar más tarjetas</button>
             
             </section>
         </React.Fragment>
