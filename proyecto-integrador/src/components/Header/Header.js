@@ -5,18 +5,18 @@ class Header extends Component{
   constructor(props){
     super(props)
     this.state = {
-       value: ''
+      value: ''
     }
 }   
 
 evitarSubmit(event){
   event.preventDefault();
-  //alert('ALERTA')
-  this.props.filtrarBusqueda(this.state.value)
 }
 
 cambios(event){
-this.setState({value: event.target.value}, ()=>this.props.filtrarPeliculas )
+  this.setState({
+    value: event.target.value
+  }, () => this.props.filtrar(this.state.value))
 }
 
 render(){

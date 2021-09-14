@@ -12,74 +12,69 @@ class App extends Component {
       peliculas: [],
       cargando: false,
       paginacion: 2,
-      urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=273b9407308bfcdeef52576c44acfda9&language=en-US&page=1`, 
+      urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1`, 
       orientacion: "card-container-row", 
       flechaDown: "fas fa-chevron-right", 
       flechaUp: "fas fa-chevron-left",
-      value: ''
+      value: '',
     }
   }
-  
-  componentDidMount(){
-    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=273b9407308bfcdeef52576c44acfda9&language=en-US&page=1'
-    console.log(url)
-    fetch(url)
-      .then((respuesta) => respuesta.json())
-      .then((data) => {
-        console.log(data.results)
-        this.setState({
-          peliculas: data.results,
-          cargando: true
-        })
-      })
-    .catch(err => console.log(err));
-    
-  }
 
-  /* agregar(){
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=273b9407308bfcdeef52576c44acfda9&language=en-US&page=${this.state.paginacion}`)
+  componentDidMount(){
+    const url = 'https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1'
+    fetch(url) 
       .then((respuesta) => respuesta.json())
-      .then((data) => {
-        this.setState({
-            peliculas: this.state.peliculas.concat(data.results),
-            paginacion: this.state.paginacion + 1
+      .then((data) =>{
+          this.setState({
+            peliculas: data.results, 
+            cargando: true
           })
       })
-      .catch(err => console.log(err));
-  }  */
+      .catch(err => console.log(err))
+  }
 
-/*   filtrar(texto){
-    let filtrados =  this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
-     ); 
-     console.log(filtrados);
-     
-     this.setState({
-         peliculas: filtrados,
-     })
- }
+  
+  agregar(){
+    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=${this.state.paginacion}`)
+      .then((respuesta) => respuesta.json())
+      .then((data) => {
+        this.setState({
+          peliculas: this.state.peliculas.concat(data.results),
+          paginacion: this.state.paginacion + 1
+        })
+      }).catch(err => console.log(err));
+  } 
 
-
- cambiarOrientacion(orientacion){
+  cambiarOrientacion(orientacion){
     this.setState({
       orientacion: orientacion, 
       flechaUp: (this.state.flechaUp === "fas fa-chevron-left") ? ("fas fa-chevron-up") : ("fas fa-chevron-left"),
       flechaDown: (this.state.flechaDown === "fas fa-chevron-right") ? ("fas fa-chevron-down") : ("fas fa-chevron-right")
     })
 
-  }  */
+  } 
 
-/*   filtrarPeliculas(value){
-    alert(value)
+  filtrar(texto){
+    let filtrados =  this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
+    ); 
     this.setState({
-      value
+      peliculas: filtrados,
+    })
+  } 
+ 
+  borrarTarjeta(id){
+    console.log(id)
+    const resto = this.state.peliculas.filter((peliBorrada) => peliBorrada.id !== id)
+    this.setState({
+        peliculas: resto,
     })
   }
- */
+
   render(){
       return (
         <div id="wrapper">
-          <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrarBusqueda={(value)=>this.filtrarPeliculas(value)}/>
-          <Peliculas /* agregar={this.agregar()} */ peliculas={this.state.peliculas} /* orientacion={this.state.orientacion} */ flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} filtro={()=> this.state.value} cargando={this.state.cargando}/>
+          <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrar={(params)=>this.filtrar(params)}/>
+          <Peliculas  borrar={(id)=> this.borrarTarjeta(id)}  agregar={()=> this.agregar()} cargando={this.state.cargando} peliculas={this.state.peliculas} orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown}/>
           <Footer/>
         </div>
       );

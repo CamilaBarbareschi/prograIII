@@ -1,25 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
 import Tarjetas from '../Tarjetas/Tarjetas';
 import './Peliculas.css'
 
-class Peliculas extends Component{
 
-constructor(props){
-    super(props)
-    this.state = {
-        peliculas: this.props.peliculas,
-        cargando: this.props.cargando
-    }
-}   
+const Peliculas = (props) => {
+    
+    let {peliculas: peliculas, agregar: agregar, cargando: cargando, orientacion: orientacion, flechaUp: flechaUp, flechaDown: flechaDown} = props; 
 
-borrarTarjeta(id){
-    const resto = this.state.peliculas.filter((peliBorrada) => peliBorrada.id !== id)
-    this.setState({
-        peliculas: resto,
-    })
-}
-
-render(){
     return(
         <React.Fragment>
             <section className="topbar">
@@ -27,28 +14,23 @@ render(){
             </section>
           
             <section className="card-container">
-            {
-                this.state.cargando === false ? (
-                    <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
-                ):( 
+                {
+                    cargando === false ? (
+                        <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+                    ):( 
+                        <article className={orientacion}> 
                 
-                <article className={this.props.orientacion}>
-            
-            {   this.state.peliculas.map((peliculas) => (
-                    <Tarjetas key={peliculas.id} id={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview}  flechaUp={this.props.flechaUp} flechaDown={this.props.flechaDown}
-                    estreno={peliculas.release_date} popularidad={peliculas.popularity} idioma={peliculas.original_language} borrar={(peliculaBorrada)=>this.borrarTarjeta(peliculaBorrada)}/>
-                ))
-            }
-                </article>
-            )} 
-            
-          {/*   <button className="cargarMas" type="button" onClick={()=>this.props.agregar()}>Cargar más tarjetas</button> */}
-            
+                        {peliculas.map((peliculas) => (<Tarjetas key={peliculas.id} id={peliculas.id} img={peliculas.poster_path} title={peliculas.title} descrip={peliculas.overview}  flechaUp={flechaUp} flechaDown={flechaDown} estreno={peliculas.release_date} popularidad={peliculas.popularity} idioma={peliculas.original_language} borrar={()=> props.borrar(peliculas.id)}  /> ))}
+                        
+                        </article>
+                    )    
+                }
+                
+                <button className="cargarMas" type="button" onClick={()=> agregar()}>Cargar más tarjetas</button> 
             </section>
+
         </React.Fragment>
     )
-}
-
 }
 
 export default Peliculas
