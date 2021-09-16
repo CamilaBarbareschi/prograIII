@@ -57,3 +57,11 @@ i:hover{
 i.fas.fa-chevron-down{
     margin-left: 6px;  
 }
+
+.title{
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+

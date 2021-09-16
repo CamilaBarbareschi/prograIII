@@ -8,6 +8,7 @@ constructor(props){
   this.state = {
     verMas: false,
     texto: "Ver mas",
+    titulo: 'title',
   }
 }   
 
@@ -16,11 +17,13 @@ verMas(){
     this.setState({ 
       verMas: false,
       texto: "Ver mas",
+      titulo: 'title',
     }   
   )}else{
     this.setState({ 
       verMas: true,
       texto: "Ver menos",
+      titulo: 'extendido'
     }
   )
 }}
@@ -42,7 +45,7 @@ render(){
         <img src= {`https://image.tmdb.org/t/p/w342/${this.props.img}`} alt="" />
         
         <section className="principal-info">
-          <h3>{this.props.title} </h3>
+          <h3 className={`${this.state.titulo === 'title' ? 'title': 'extendido'}`}>{this.props.title} </h3>
           <p> <strong>Fecha de estreno:</strong> {this.props.estreno}</p>
 
           <section className={`${this.state.verMas ? 'aditional-info-show': 'aditional-info'}`}>
