@@ -34,7 +34,7 @@ render(){
           <i className={`${this.props.flechaUp}`}/>
           <i className={`${this.props.flechaDown}`}/>
           
-        </div>
+        </div> 
         <i className="far fa-window-close" onClick={()=> this.props.borrar(this.props.id)} />
       </section>
 
