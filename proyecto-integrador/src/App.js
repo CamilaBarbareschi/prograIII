@@ -17,6 +17,7 @@ class App extends Component {
       flechaDown: "fas fa-chevron-right", 
       flechaUp: "fas fa-chevron-left",
       value: '',
+      resulBusqueda: true
     }
   }
 
@@ -55,11 +56,17 @@ class App extends Component {
   } 
 
   filtrar(texto){
-    let filtrados =  this.state.peliculas.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
+    let filtrados =  this.state.peliculasOriginales.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
     ); 
-    this.setState({
-      peliculas: filtrados,
-    })
+    if (filtrados.length !== 0) {
+      this.setState({
+        peliculas: filtrados,
+      })
+    } else {
+      this.setState({
+        resulBusqueda: false,
+      })
+    }
   } 
  
   borrarTarjeta(id){
@@ -74,7 +81,7 @@ class App extends Component {
       return (
         <div id="wrapper">
           <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrar={(params)=>this.filtrar(params)}/>
-          <Peliculas  borrar={(id)=> this.borrarTarjeta(id)}  agregar={()=> this.agregar()} cargando={this.state.cargando} peliculas={this.state.peliculas} orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown}/>
+          <Peliculas resulBusqueda={this.state.resulBusqueda} borrar={(id)=> this.borrarTarjeta(id)}  agregar={()=> this.agregar()} cargando={this.state.cargando} peliculas={this.state.peliculas} orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown}/>
           <Footer/>
         </div>
       );

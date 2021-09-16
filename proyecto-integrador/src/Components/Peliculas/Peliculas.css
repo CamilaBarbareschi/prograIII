@@ -53,3 +53,14 @@
     background-color: rgba(53, 53, 53, 0.137);
     color: #6670fc;
 }
+
+.resulBusqueda{
+    margin-left: 2%;
+}
+
+@media sreen and (min-widht: 768px){
+    .cargarMas{
+        margin-left: 70%;
+    }
+    
+}
