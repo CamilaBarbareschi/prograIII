@@ -63,6 +63,7 @@ class App extends Component {
     if (filtrados.length !== 0) {
       this.setState({
         peliculas: filtrados,
+        resulBusqueda: true,
       })
     } else {
       this.setState({
