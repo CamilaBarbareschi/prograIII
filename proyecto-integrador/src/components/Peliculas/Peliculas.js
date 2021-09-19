@@ -4,11 +4,10 @@ import './Peliculas.css'
 
 
 const Peliculas = (props) => {
-    
     let {peliculas: peliculas, agregar: agregar, cargando: cargando, orientacion: orientacion, flechaUp: flechaUp, flechaDown: flechaDown} = props; 
-
     return(
-        <React.Fragment>
+
+        <React.Fragment>        
             <section className="topbar">
                 <h2>Peliculas populares</h2>
             </section>

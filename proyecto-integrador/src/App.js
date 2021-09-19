@@ -41,7 +41,7 @@ class App extends Component {
       .then((data) => {
         this.setState({
           peliculas: this.state.peliculas.concat(data.results),
-          paginacion: this.state.paginacion + 1
+          paginacion: this.state.paginacion + 2
         })
       }).catch(err => console.log(err));
   } 
@@ -70,14 +70,14 @@ class App extends Component {
   } 
  
   borrarTarjeta(id){
-    console.log(id)
     const resto = this.state.peliculas.filter((peliBorrada) => peliBorrada.id !== id)
     this.setState({
-        peliculas: resto,
+      peliculas: resto,
     })
   }
 
   render(){
+    
       return (
         <div id="wrapper">
           <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrar={(params)=>this.filtrar(params)}/>
