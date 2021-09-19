@@ -56,11 +56,6 @@
 
 .resulBusqueda{
     margin-left: 2%;
+    height: 45vh;
 }
 
-@media sreen and (min-widht: 768px){
-    .cargarMas{
-        margin-left: 70%;
-    }
-    
-}

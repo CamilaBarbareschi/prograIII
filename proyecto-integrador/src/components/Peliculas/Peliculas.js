@@ -13,7 +13,7 @@ const Peliculas = (props) => {
             </section>
           
             <section className="card-container">
-                {
+                { 
                     cargando === false ? (
                         <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
                     ):( 
@@ -27,7 +27,7 @@ const Peliculas = (props) => {
                         </article>
                         )
                     )    
-                }
+                }  
                 
                 <button className="cargarMas" type="button" onClick={()=> agregar()}>Cargar más tarjetas</button> 
             </section>

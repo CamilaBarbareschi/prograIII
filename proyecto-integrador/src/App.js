@@ -9,10 +9,10 @@ class App extends Component {
   constructor(props){
     super(props);
     this.state = {
+      originales: [],
       peliculas: [],
       cargando: false,
       paginacion: 2,
-      urlOriginal: `https://api.themoviedb.org/3/movie/popular?api_key=3db55afa4c61183073e97b76636daba5&language=en-US&page=1`, 
       orientacion: "card-container-row", 
       flechaDown: "fas fa-chevron-right", 
       flechaUp: "fas fa-chevron-left",
@@ -27,6 +27,7 @@ class App extends Component {
       .then((respuesta) => respuesta.json())
       .then((data) =>{
           this.setState({
+            originales: data.results,
             peliculas: data.results, 
             cargando: true
           })
@@ -40,6 +41,7 @@ class App extends Component {
       .then((respuesta) => respuesta.json())
       .then((data) => {
         this.setState({
+          originales: this.state.originales.concat(data.results),
           peliculas: this.state.peliculas.concat(data.results),
           paginacion: this.state.paginacion + 2
         })
@@ -56,7 +58,7 @@ class App extends Component {
   } 
 
   filtrar(texto){
-    let filtrados =  this.state.peliculasOriginales.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
+    let filtrados =  this.state.originales.filter((pelicula)=> pelicula.title.toLowerCase().includes(texto.toLowerCase())
     ); 
     if (filtrados.length !== 0) {
       this.setState({
@@ -81,8 +83,8 @@ class App extends Component {
       return (
         <div id="wrapper">
           <Header cambiarOrientacion={(orientacion)=>this.cambiarOrientacion(orientacion)} filtrar={(params)=>this.filtrar(params)}/>
-          <Peliculas resulBusqueda={this.state.resulBusqueda} borrar={(id)=> this.borrarTarjeta(id)}  agregar={()=> this.agregar()} cargando={this.state.cargando} peliculas={this.state.peliculas} orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown}/>
-          <Footer/>
+          <Peliculas  borrar={(id)=> this.borrarTarjeta(id)}  agregar={()=> this.agregar()} cargando={this.state.cargando} peliculas={this.state.peliculas} orientacion={this.state.orientacion} flechaUp={this.state.flechaUp} flechaDown={this.state.flechaDown} resulBusqueda={this.state.resulBusqueda}/>
+          <Footer/> 
         </div>
       );
   }
