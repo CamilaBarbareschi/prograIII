@@ -76,6 +76,7 @@ class App extends Component {
     const resto = this.state.peliculas.filter((peliBorrada) => peliBorrada.id !== id)
     this.setState({
       peliculas: resto,
+      originales: resto
     })
   }
 
