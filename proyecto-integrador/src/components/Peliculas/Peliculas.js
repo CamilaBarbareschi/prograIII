@@ -4,7 +4,7 @@ import './Peliculas.css'
 
 
 const Peliculas = (props) => {
-    let {peliculas: peliculas, agregar: agregar, cargando: cargando, orientacion: orientacion, flechaUp: flechaUp, flechaDown: flechaDown} = props; 
+    let {peliculas, agregar, cargando, orientacion, flechaUp, flechaDown} = props; 
     return(
 
         <React.Fragment>        
@@ -15,7 +15,7 @@ const Peliculas = (props) => {
             <section className="card-container">
                 { 
                     cargando === false ? (
-                        <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen></iframe>
+                        <iframe src="https://giphy.com/embed/xTkcEQACH24SMPxIQg" width="480" height="480" frameBorder="0" className="giphy-embed" allowFullScreen title="gif"> </iframe>
                     ):( 
                         props.resulBusqueda === false ? (
                             <p className="resulBusqueda"> No hemos encontrado resultados para su busqueda. Intente con otro nombre :)</p>
